@@ -2,6 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[System.Serializable]
+public class Boundary
+{
+    public float xMin, xMax, zMin, zMax;
+}
+
 public class PlyerController : MonoBehaviour {
 
     private Rigidbody rb;
@@ -20,7 +26,13 @@ public class PlyerController : MonoBehaviour {
 
         rb.position = new Vector3(moveHorizontal, 0.0f, moveVertical);
         rb.velocity = new Vector3(moveHorizontal, 0.0f, moveVertical) * speed;
-        
+
+        rb.rotation = Quaternion.Euler(new Vector3(moveHorizontal, 0.0f, moveVertical));
+  
+        }
+
+
+
 
     }
-}
+
