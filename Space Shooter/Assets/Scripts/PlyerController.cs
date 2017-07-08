@@ -12,6 +12,8 @@ public class PlyerController : MonoBehaviour {
 
     private Rigidbody rb;
     public float speed;
+    public Boundary boundary;
+   
 
     void Start()
     {
@@ -25,14 +27,15 @@ public class PlyerController : MonoBehaviour {
         float moveVertical = Input.GetAxis("Vertical");
 
         rb.position = new Vector3(moveHorizontal, 0.0f, moveVertical);
-        rb.velocity = new Vector3(moveHorizontal, 0.0f, moveVertical) * speed;
+        rb.velocity = rb.position * speed;
 
-        rb.rotation = Quaternion.Euler(new Vector3(moveHorizontal, 0.0f, moveVertical));
-  
-        }
+        rb.position = new Vector3
+            (
+            Mathf.Clamp(rb.position.x, boundary.xMin, boundary.xMax),
+            0.0f,
+            Mathf.Clamp(rb.position.z, boundary.zMin, boundary.zMax)
+            );
 
-
-
-
+    }
     }
 
