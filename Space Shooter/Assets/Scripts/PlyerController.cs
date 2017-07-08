@@ -19,6 +19,8 @@ public class PlyerController : MonoBehaviour {
         float moveVertical = Input.GetAxis("Vertical");
 
         rb.position = new Vector3(moveHorizontal, 0.0f, moveVertical);
+        rb.velocity = new Vector3(moveHorizontal, 0.0f, moveVertical) * speed;
+        
 
     }
 }
