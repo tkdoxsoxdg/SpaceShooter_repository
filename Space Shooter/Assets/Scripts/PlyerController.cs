@@ -23,6 +23,8 @@ public class PlyerController : MonoBehaviour {
     public float fireRate;
 
     private float nextFire;
+
+    private AudioSource audiosorce_p;
     
    
 
@@ -41,6 +43,9 @@ public class PlyerController : MonoBehaviour {
             nextFire = Time.time + fireRate;
             //   GameObject clone = 
             Instantiate(shot, shotSpawn.position, shotSpawn.rotation);// as GameObject;
+            audiosorce_p = GetComponent<AudioSource>();
+            audiosorce_p.Play();
+
         } 
 
     }
