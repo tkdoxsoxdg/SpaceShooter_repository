@@ -6,9 +6,22 @@ public class DestroyByContact : MonoBehaviour
 {
     public GameObject explosion;
     public GameObject playerExplosion;
-	private GameController gameController;
-	public int score;
+	public int scoreValue;
+    private GameController gameController;
     //OnTrigger→今回はBoundaryのコライダーを使う→タグ付け判定→対象のタグ付けしたオブジェクトを返す。
+    void Start()
+    {
+        GameObject gameControllerObject = GameObject.FindWithTag("GameController");
+        if(gameControllerObject != null)
+        {
+            gameController = gameControllerObject.GetComponent<GameController>();
+        }
+        if(gameControllerObject == null)
+        {
+            Debug.Log("Can't find 'GameController' script");
+        }
+    }
+
     void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Boundary")
@@ -19,11 +32,11 @@ public class DestroyByContact : MonoBehaviour
         if (other.tag == "Player")
         {
             Instantiate(playerExplosion, other.transform.position, other.transform.rotation);// as GameObject;
-			//gameController.GameOver();
+			gameController.GameOver();
 	
         }
         //other.gameObject : Anteroid   gameobject : Fire1
-		//gameController.AddScore(score);
+        gameController.AddScore(scoreValue);
         Destroy(other.gameObject);
         Destroy(gameObject);
 

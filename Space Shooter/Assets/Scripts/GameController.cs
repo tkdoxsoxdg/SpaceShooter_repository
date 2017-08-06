@@ -36,8 +36,11 @@ public class GameController : MonoBehaviour {
 		if (restart) {
 			if (Input.GetKeyDown (KeyCode.R)) {
 				SceneManager.LoadScene (SceneManager.GetActiveScene().buildIndex);
-			}
-		}
+                // Application.Loadlevel(Application.loadedlevel)→現行のunityでは、Obsolete（廃止）されたメソッド
+                //　unity 5.x以降から上記メソッドに代替されている。
+
+            }
+        }
 	}
 
     IEnumerator SpawnWaves()
