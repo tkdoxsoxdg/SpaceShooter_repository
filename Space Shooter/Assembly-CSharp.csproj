@@ -6,7 +6,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{4123C99C-F5D5-78FE-2D04-D1C3E70F8FC7}</ProjectGuid>
+    <ProjectGuid>{A8DECCB3-82DB-2620-61CD-82E85E743C20}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -46,7 +46,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\GameDirector.cs" />
      <Compile Include="Assets\Scripts\DestroyByBoundary.cs" />
      <Compile Include="Assets\Scripts\DestroyByContact.cs" />
      <Compile Include="Assets\Scripts\DestroyByTime.cs" />
