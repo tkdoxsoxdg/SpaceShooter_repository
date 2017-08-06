@@ -17,12 +17,36 @@ public class PlyerController : MonoBehaviour {
     public float speed;
     public float tilt;
     public Boundary boundary;
+
+    public GameObject shot;
+    public Transform shotSpawn;
+    public float fireRate;
+
+    private float nextFire;
+
+    private AudioSource audiosorce_p;
+    
    
 
     void Start()
     {
         //Rigidbodyのコンポーネントを呼び出す
         rb = GetComponent<Rigidbody>();
+
+    }
+
+    void Update()
+    {
+      
+        if(Input.GetButton("Fire1") && Time.time > nextFire)
+        {
+            nextFire = Time.time + fireRate;
+            //   GameObject clone = 
+            Instantiate(shot, shotSpawn.position, shotSpawn.rotation);// as GameObject;
+            audiosorce_p = GetComponent<AudioSource>();
+            audiosorce_p.Play();
+
+        } 
 
     }
 
