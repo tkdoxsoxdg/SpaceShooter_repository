@@ -102,6 +102,7 @@
     <Compile Include="Assets\Scripts\Mover.cs" />
     <Compile Include="Assets\Scripts\PlyerController.cs" />
     <Compile Include="Assets\Scripts\RandomRotator.cs" />
+    <Compile Include="Assets\Scripts\WeaponController.cs" />
     <Compile Include="Assets\TutorialInfo\Scripts\TutorialInfo.cs" />
   </ItemGroup>
   <ItemGroup>

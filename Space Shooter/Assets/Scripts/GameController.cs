@@ -55,7 +55,7 @@ public class GameController : MonoBehaviour {
 				yield return new WaitForSeconds (spawnWait);
 			}
 			yield return new WaitForSeconds (waveWait);
-        
+
 			if (gameOver) {
 				restartText.text = "Press 'R' for Restart";
 				restart = true;
@@ -78,7 +78,7 @@ public class GameController : MonoBehaviour {
 	public void GameOver(){
 		gameOverText.text = "Game Over!!!";
 		gameOver = true;
-	
+
 	}
-		
+
 }
