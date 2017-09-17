@@ -12,10 +12,10 @@ public class WeaponController : MonoBehaviour {
     private AudioSource audioSorce;
 
 	// Use this for initialization
-	void Start () {
+	void Start ()
+    {
         audioSorce = GetComponent<AudioSource>();
         InvokeRepeating("Fire", delay, fireRate);
-
 	}
 
     void Fire()

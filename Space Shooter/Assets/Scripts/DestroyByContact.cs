@@ -40,7 +40,7 @@ public class DestroyByContact : MonoBehaviour
 
         }
         //other.gameObject : Anteroid   gameobject : Fire1
-        //gameController.AddScore(scoreValue);
+        gameController.AddScore(scoreValue);
         Destroy(other.gameObject);
         Destroy(gameObject);
 
