@@ -8,6 +8,7 @@ public class WeaponController : MonoBehaviour {
     public Transform shotSpawn;
     public float fireRate;
     public float delay;
+    public AudioClip[] clips;
 
     private AudioSource audioSorce;
 
@@ -21,6 +22,8 @@ public class WeaponController : MonoBehaviour {
     void Fire()
     {
         Instantiate(shot, shotSpawn.position, shotSpawn.rotation);
+        AudioClip clip = clips[Random.Range(0, clips.Length)];
+        audioSorce.clip = clip;
         audioSorce.Play();
     }
 }
