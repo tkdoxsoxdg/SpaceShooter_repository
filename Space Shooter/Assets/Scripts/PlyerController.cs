@@ -20,7 +20,6 @@ public class PlyerController : MonoBehaviour {
 
     public GameObject shot;
     public Transform[] shotSpawns;
-    //public Transform shotSpawn;
     public float fireRate;
 
     private float nextFire;

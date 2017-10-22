@@ -28,7 +28,7 @@ public class DestroyByContact : MonoBehaviour
         {
             return;
         }
-
+        
         if (explosion != null)
         {
             Instantiate(explosion, transform.position, transform.rotation);
